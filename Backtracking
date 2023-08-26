@@ -1,0 +1,15 @@
+class Backtracking:
+    def __init__(self,n,r):
+        self.a = [0]*n
+        self.c = r
+    def find(self, s):
+        for i in range(s,len(self.a)):
+            self.a[i] = 1
+            if sum(self.a) == self.c:
+                print(self.a)
+            else:
+                self.find(i + 1)
+            self.a[i] = 0
+             
+bt = Backtracking(5,2)
+bt.find(0)
